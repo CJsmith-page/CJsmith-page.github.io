@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SLA Performance Analysis | Cudjoe John Smith</title>
+  <meta name="description" content="How I built a team's first weekly SLA report by joining three systems in SQL, found why missed SLAs clustered among high-volume customers, and drove a schedule change.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== HEADER (same on every page) ===== -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a class="nav-name" href="../../index.html">Business Analyst Portfolio</a>
+    <div class="nav-links">
+      <a href="../../index.html#work">Experience</a>
+      <a href="../../index.html#analysis">Power BI</a>
+      <a href="../../index.html#about">About</a>
+      <a class="nav-li" aria-label="LinkedIn" href="https://www.linkedin.com/in/c-john-smith/" target="_blank" rel="noopener"><svg class="li-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span class="li-text">LinkedIn</span></a>
+      <a class="btn" href="../../index.html#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ===== 1. PAGE HEADER ===== -->
+  <section class="page-head" aria-labelledby="title">
+    <a class="crumb" href="../../index.html#work">← All experience</a>
+    <span class="label">Real experience</span>
+    <h1 id="title">SLA Performance Analysis</h1>
+    <p class="lede">Nobody could say how we were performing on SLAs, so I built the measure, and it led to a schedule change that improved on-time delivery.</p>
+    <p class="meta-line"><span>Business Systems Analyst II</span></p>
+    <a class="repo-link-inline" href="https://github.com/CJsmith-page/ba-experience-sla-performance" target="_blank" rel="noopener">View repository on GitHub →</a>
+  </section>
+
+  <!-- ===== HERO VISUAL (first screen) ===== -->
+  <figure class="hero-visual">
+    <div class="timing" role="img" aria-label="Before: all files start at the same time and high-volume files finish after the SLA deadline. After: high-volume files start earlier and finish before the deadline.">
+        <h4>Before: every customer's files started at the same time</h4>
+        <div class="bar-row"><span>Standard volume</span><div class="track"><div class="bar" style="left: 35%; width: 25%"></div><div class="deadline"></div></div></div>
+        <div class="bar-row"><span>High volume</span><div class="track"><div class="bar late" style="left: 35%; width: 60%">Misses SLA</div><div class="deadline"></div></div></div>
+        <h4>After: high-volume files start earlier</h4>
+        <div class="bar-row"><span>Standard volume</span><div class="track"><div class="bar" style="left: 35%; width: 25%"></div><div class="deadline"></div></div></div>
+        <div class="bar-row"><span>High volume</span><div class="track"><div class="bar ontime" style="left: 10%; width: 60%">Finishes in time</div><div class="deadline"></div></div></div>
+        <div class="axis"><span>Time of day →</span><div class="track"><span class="deadline-label">SLA deadline</span></div></div>
+      </div>
+    <figcaption><strong>The finding in one picture:</strong> every file started at the same time, so high-volume files ran past their deadline. Starting them earlier fixed it.</figcaption>
+  </figure>
+
+  <!-- ===== 2. AT A GLANCE (three short bullets) ===== -->
+  <section aria-label="At a glance">
+    <ul class="glance">
+      <li><span class="glance-key">Problem</span><span>There was no weekly view of SLA performance, so nobody could say which deliveries were late, or why.</span></li>
+      <li><span class="glance-key">What I did</span><span>Joined three systems in SQL, set clear rules for "on time," and built the team's first weekly SLA report.</span></li>
+      <li><span class="glance-key">Result</span><span>Showed that high-volume customers' files were missing deadlines because every file started at the same time. High-volume files now start earlier and finish in time.</span></li>
+    </ul>
+  </section>
+
+  <!-- ===== 3. THE SITUATION ===== -->
+  <section aria-labelledby="context-h">
+    <h2 id="context-h">The situation</h2>
+    <p>The team delivered files to customers every day, each against an agreed deadline (SLA). The information needed to judge performance was split across three systems: requests in Salesforce, status and due dates in Jira, and delivery times in a delivery log.</p>
+    <p>No one had joined them up. So when I asked how we were performing on SLAs, there was no clear answer, and late deliveries were only dealt with one at a time, as they came up.</p>
+  </section>
+
+  <!-- ===== 4. HOW I DELIVERED IT (steps: what + why) =====
+       To add a step: copy one <li class="step">...</li> block. Numbers update automatically. -->
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How I delivered it</h2>
+    <ol class="steps">
+      <li class="step">
+        <h3>Set the rules before counting anything</h3>
+        <p>On time means delivered at or before the SLA due time. Anything undelivered counts as late. The clock runs in each customer's own business calendar.</p>
+        <p class="why"><strong>Why:</strong> A measure people argue about doesn't change anything. Agreed rules made the numbers hard to dispute. The business calendar mattered because customers in regions with different working weeks have different deadlines.</p>
+      </li>
+      <li class="step">
+        <h3>Joined three systems in SQL</h3>
+        <p>Combined the request date from Salesforce, the status and SLA due date from Jira, and the delivery timestamp from the delivery log, then flagged every delivery as on time or late.</p>
+        <p class="why"><strong>Why:</strong> Each system held part of the picture. Only together could they show whether a delivery met its deadline.</p>
+      </li>
+      <li class="step">
+        <h3>Rolled it up into a weekly report</h3>
+        <p>Summarised the results by week and by customer, worst first, with average and maximum minutes late, in an Excel report the team reviewed every week.</p>
+        <p class="why"><strong>Why:</strong> Sorting worst first put attention where it was needed. Average and maximum delay together separate "slightly late, often" from "very late, occasionally."</p>
+      </li>
+      <li class="step">
+        <h3>Found why the misses clustered</h3>
+        <p>The late deliveries were concentrated among the highest-volume customers. Every customer's files started processing at the same time, so the largest jobs ran past their deadline.</p>
+        <p class="why"><strong>Why:</strong> Knowing <em>who</em> was late wasn't enough. Finding <em>why</em> pointed to a fix in the schedule, not in people's effort.</p>
+      </li>
+      <li class="step">
+        <h3>Turned the finding into a change</h3>
+        <p>Recommended starting high-volume customers' files earlier. The schedule was changed, and those files now finish before their deadline.</p>
+        <p class="why"><strong>Why:</strong> Moving the start time fixed the cause directly, without extra resources or work for other customers.</p>
+      </li>
+    </ol>
+  </section>
+
+  <figure class="artifact wide">
+    <div class="artifact-head"><h3>The full process: from missed deadlines to a schedule change</h3><span class="tag-illustration">Anonymised illustration</span></div>
+    <p class="scroll-hint">Scroll sideways to see the whole flow →</p>
+    <div class="sl-wrap">
+      <div class="swimlane" style="--cols: 5" role="img" aria-label="Swimlane with four lanes: customer, processing team, business systems analyst, weekly team review. 1, customer requests a file with a deadline. 2, processing team processes files, all starting at the same time. 3, I set the rules for on time. 4, I join three systems in SQL. 5, I produce a weekly report, worst first. 6, the weekly review asks where and why we are missing. 7, I recommend an earlier start for high-volume files. 8, the schedule is changed. 9, files are delivered on time.">
+        <div class="sl-label" style="grid-row: 1">Customer</div>
+        <div class="sl-lane" style="grid-row: 1"></div>
+        <div class="sl-label" style="grid-row: 2">Processing team</div>
+        <div class="sl-lane" style="grid-row: 2"></div>
+        <div class="sl-label me" style="grid-row: 3">Business Systems Analyst (me)</div>
+        <div class="sl-lane me" style="grid-row: 3"></div>
+        <div class="sl-label" style="grid-row: 4">Weekly team review</div>
+        <div class="sl-lane" style="grid-row: 4"></div>
+
+        <div class="sl-box to-down" data-lane="Customer" style="grid-row: 1; grid-column: 2"><b>1</b>Requests a file with a delivery deadline</div>
+        <div class="sl-box" data-lane="Processing team" style="grid-row: 2; grid-column: 2"><b>2</b>Processes files; all start at the same time</div>
+        <div class="sl-box to-right" data-lane="Business Systems Analyst (me)" style="grid-row: 3; grid-column: 3"><b>3</b>Set the rules for "on time"</div>
+        <div class="sl-box to-right" data-lane="Business Systems Analyst (me)" style="grid-row: 3; grid-column: 4"><b>4</b>Join Salesforce, Jira and the delivery log in SQL</div>
+        <div class="sl-box to-down" data-lane="Business Systems Analyst (me)" style="grid-row: 3; grid-column: 5"><b>5</b>Weekly report, worst first</div>
+        <div class="sl-box decision" data-lane="Weekly team review" style="grid-row: 4; grid-column: 5"><b>6</b>Where are we missing, and why?<small>No pattern → keep monitoring</small></div>
+        <div class="sl-box to-up" data-lane="Business Systems Analyst (me)" style="grid-row: 3; grid-column: 6"><b>7</b>Recommend an earlier start for high-volume files</div>
+        <div class="sl-box to-up" data-lane="Processing team" style="grid-row: 2; grid-column: 6"><b>8</b>Schedule changed</div>
+        <div class="sl-box end" data-lane="Customer" style="grid-row: 1; grid-column: 6"><b>9</b>Files delivered on time<small>On-time delivery improved</small></div>
+      </div>
+    </div>
+    <figcaption>Most of the work sits in my lane, but the change only happened because the weekly review turned the report into a decision.</figcaption>
+  </figure>
+
+  <!-- ===== 5. THE KEY DECISION ===== -->
+  <div class="callout">
+    <h3>The call I made</h3>
+    <p><strong>Count undelivered work as late.</strong> A report that only measures files that were delivered quietly drops the worst cases and makes performance look better than it is. I built the query so nothing could disappear: if it hadn't been delivered, it counted against us.</p>
+  </div>
+
+  <!-- ===== 6. WHAT I BUILT ===== -->
+  <section aria-labelledby="artifacts-h">
+    <h2 id="artifacts-h">What I built</h2>
+
+    <figure class="artifact">
+      <div class="artifact-head"><h3>From three systems to one weekly view</h3><span class="tag-illustration">Recreated illustration</span></div>
+      <ol class="flow" aria-label="Data flow">
+        <li><strong>Salesforce</strong><span>Request received date</span></li>
+        <li><strong>Jira</strong><span>Status and SLA due date</span></li>
+        <li><strong>Delivery log</strong><span>File delivered timestamp</span></li>
+        <li><strong>SQL</strong><span>Join and flag each delivery</span></li>
+        <li><strong>Excel report</strong><span>Weekly, by customer, worst first</span></li>
+        <li class="end"><strong>Team review</strong><span>Every week</span></li>
+      </ol>
+    </figure>
+
+    <figure class="artifact">
+      <div class="artifact-head"><h3>The core query: join the systems and flag each delivery</h3><span class="tag-illustration">Simplified</span></div>
+<pre class="code"><code><span class="k">SELECT</span> r.request_id,
+       r.customer_id,
+       j.sla_due_at,
+       d.delivered_at,
+       <span class="k">CASE WHEN</span> d.delivered_at <span class="k">IS NOT NULL</span>
+             <span class="k">AND</span> d.delivered_at &lt;= j.sla_due_at
+            <span class="k">THEN</span> <span class="s">'On time'</span> <span class="k">ELSE</span> <span class="s">'Late'</span> <span class="k">END AS</span> sla_status
+       <span class="c">-- plus minutes_late, counted in the customer's business calendar</span>
+<span class="k">FROM</span> requests r                         <span class="c">-- Salesforce</span>
+<span class="k">JOIN</span> tickets j    <span class="k">ON</span> j.request_id = r.request_id   <span class="c">-- Jira</span>
+<span class="k">LEFT JOIN</span> deliveries d <span class="k">ON</span> d.request_id = r.request_id  <span class="c">-- undelivered stays in, as Late</span></code></pre>
+    </figure>
+
+  </section>
+
+  <!-- ===== 7. RESULTS: verified vs proposed ===== -->
+  <section aria-labelledby="results-h">
+    <h2 id="results-h">Results</h2>
+    <div class="results">
+      <div class="result-col verified">
+        <h3>What happened</h3>
+        <ul>
+          <li>The team had its first weekly SLA report, reviewed every week.</li>
+          <li>Missed SLAs were traced to high-volume customers and to the shared start time.</li>
+          <li>High-volume files moved to an earlier start, and on-time delivery improved.</li>
+        </ul>
+      </div>
+      <div class="result-col proposed">
+        <h3>What I'd measure next</h3>
+        <ul>
+          <li>On-time rate for high-volume customers, before vs. after the change.</li>
+          <li>Missed SLAs per week, tracked as a trend.</li>
+          <li>Maximum minutes late, to catch new outliers early.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 10. SKILLS ===== -->
+  <section aria-labelledby="skills-h">
+    <h2 id="skills-h">Skills used</h2>
+    <ul class="tags">
+      <li>SQL</li><li>Excel</li><li>KPI definition</li><li>Root cause analysis</li><li>Process improvement</li><li>Salesforce</li><li>Jira</li>
+    </ul>
+  </section>
+
+  <!-- ===== 11. PREVIOUS / NEXT ===== -->
+  <nav class="pager" aria-label="More experience">
+    <a href="../01-collateral-investigation/index.html"><small>← Previous</small>Collateral Discrepancy Investigation</a>
+    <a class="next" href="../03-screening-delivery/index.html"><small>Next →</small>Screening Platform Request Delivery</a>
+  </nav>
+</main>
+
+<!-- ===== FOOTER (same on every page) ===== -->
+<footer class="site-footer">
+  © 2026 Cudjoe John Smith · <a href="mailto:cjohnsmith8@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/c-john-smith/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/CJsmith-page" target="_blank" rel="noopener">GitHub</a>
+</footer>
+</body>
+</html>

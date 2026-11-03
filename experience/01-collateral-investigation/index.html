@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Collateral Discrepancy Investigation | Cudjoe John Smith</title>
+  <meta name="description" content="How I identified an eight-figure collateral discrepancy that bypassed automated controls, traced it to root cause, aligned three departments on ownership and tracked every fix to closure.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== HEADER (same on every page) ===== -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a class="nav-name" href="../../index.html">Business Analyst Portfolio</a>
+    <div class="nav-links">
+      <a href="../../index.html#work">Experience</a>
+      <a href="../../index.html#analysis">Power BI</a>
+      <a href="../../index.html#about">About</a>
+      <a class="nav-li" aria-label="LinkedIn" href="https://www.linkedin.com/in/c-john-smith/" target="_blank" rel="noopener"><svg class="li-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span class="li-text">LinkedIn</span></a>
+      <a class="btn" href="../../index.html#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ===== 1. PAGE HEADER ===== -->
+  <section class="page-head" aria-labelledby="title">
+    <a class="crumb" href="../../index.html#work">← All experience</a>
+    <span class="label">Real experience · Anonymised</span>
+    <h1 id="title">Collateral Discrepancy Investigation</h1>
+    <p class="lede">I caught an eight-figure discrepancy that automated controls had missed, traced it to root cause and drove the fix to closure across three departments.</p>
+    <p class="meta-line"><span>Margin &amp; Collateral Associate</span></p>
+    <a class="repo-link-inline" href="https://github.com/CJsmith-page/ba-experience-collateral-investigation" target="_blank" rel="noopener">View repository on GitHub →</a>
+  </section>
+
+  <!-- ===== HERO VISUAL (first screen) ===== -->
+  <figure class="hero-visual">
+    <div class="artifact-head"><h3>Investigate, align, close</h3><span class="tag-illustration">Recreated illustration</span></div>
+    <div class="phases">
+      <div class="phase"><h4>Investigate</h4><ol><li>Identify the break</li><li>Rule out timing</li><li>Trace to source</li><li>Find the control gap</li></ol></div>
+      <div class="phase"><h4>Align</h4><ol><li>Write the incident report</li><li>Convene Risk, Technology and Operations</li><li>Agree measures and owners</li></ol></div>
+      <div class="phase final"><h4>Close</h4><ol><li>Retest each fix</li><li>Close the case</li></ol><p style="margin-top: 10px; font-weight: 700">Exposure resolved. Control gap closed.</p></div>
+    </div>
+    <figcaption><strong>How I worked it:</strong> found the gap, got three departments to own the fix, and retested before closing.</figcaption>
+  </figure>
+
+  <!-- ===== 2. AT A GLANCE ===== -->
+  <section aria-label="At a glance">
+    <ul class="glance">
+      <li><span class="glance-key">Problem</span><span>An eight-figure collateral discrepancy had passed through automated controls without being flagged.</span></li>
+      <li><span class="glance-key">What I did</span><span>Investigated it instead of dismissing it, traced it to root cause and brought Risk, Technology and Operations together on who would fix what.</span></li>
+      <li><span class="glance-key">Result</span><span>The exposure was resolved and the control gap closed, with every fix retested before closure.</span></li>
+    </ul>
+  </section>
+
+  <!-- ===== 3. THE SITUATION ===== -->
+  <section aria-labelledby="context-h">
+    <h2 id="context-h">The situation</h2>
+    <p>Collateral protects a bank if a counterparty can't pay what it owes. If collateral records are wrong, the bank's real exposure is wrong too, and the risk goes unseen until it matters.</p>
+    <p>My daily work was reconciliation: <strong>80+ accounts a day</strong>, investigating <strong>30–50 breaks a day</strong> across positions, valuations and collateral balances, with a <strong>99% resolution rate</strong>. A break is a mismatch between two records that should agree.</p>
+  </section>
+
+  <!-- ===== 5. HOW I DELIVERED IT ===== -->
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How I delivered it</h2>
+    <ol class="steps">
+      <li class="step">
+        <h3>Investigated instead of dismissing</h3>
+        <p>During daily reconciliation, something in the pattern didn't look right, even though no control had flagged it.</p>
+        <p class="why"><strong>Why:</strong> After reviewing the same accounts every day, I knew what normal looked like. Automated controls only catch what they were designed to catch, so experienced eyes are the second line of defence.</p>
+      </li>
+      <li class="step">
+        <h3>Ruled out the simple explanations</h3>
+        <p>Confirmed it wasn't a timing difference before treating it as a real problem.</p>
+        <p class="why"><strong>Why:</strong> Escalating an eight-figure issue that turns out to be timing costs credibility. Ruling it out first meant people took the escalation seriously.</p>
+      </li>
+      <li class="step">
+        <h3>Traced it to source and found the control gap</h3>
+        <p>Followed the discrepancy back through the data to understand why the control hadn't caught it, not just what the right figure should be.</p>
+        <p class="why"><strong>Why:</strong> Correcting one break doesn't stop the next. Finding the gap is what protects the bank going forward.</p>
+      </li>
+      <li class="step">
+        <h3>Built one fact base everyone could work from</h3>
+        <p>Wrote an incident report setting out the root cause, the data path and the expected behaviour.</p>
+        <p class="why"><strong>Why:</strong> Three departments can't agree on a fix if they're looking at different versions of the problem. One document gave everyone the same starting point.</p>
+      </li>
+      <li class="step">
+        <h3>Aligned three departments on ownership</h3>
+        <p>Brought Risk, Technology and Operations together to agree the corrective measures and who owned each one.</p>
+        <p class="why"><strong>Why:</strong> Control gaps often sit between teams, so nobody owns them until someone connects the dots. Tracing the cause was one part; getting agreement on who fixed what was the harder part.</p>
+      </li>
+      <li class="step">
+        <h3>Retested every fix before closing</h3>
+        <p>Kept an open-actions list and confirmed each fix worked before the case was closed.</p>
+        <p class="why"><strong>Why:</strong> A fix that's agreed but never checked is just a plan. Retesting is what makes "closed" true.</p>
+      </li>
+    </ol>
+  </section>
+
+  <figure class="artifact wide">
+    <div class="artifact-head"><h3>The full process: from one break to a closed control gap</h3><span class="tag-illustration">Anonymised illustration</span></div>
+    <p class="scroll-hint">Scroll sideways to see the whole flow →</p>
+    <div class="sl-wrap">
+      <div class="swimlane" style="--cols: 6" role="img" aria-label="Swimlane with four lanes: me, risk, technology, operations. 1, I spot the break in daily reconciliation. 2, I check whether it is a timing difference; if yes, resolve as routine. 3, I trace it to source and find the control gap. 4, I write the incident report as one fact base. 5, risk agrees measures and signs off the control. 6, technology builds the system fix. 7, operations runs interim manual checks. 8, I retest whether the fix works; if not, back to the owner. 9, the case is closed with the exposure resolved and the gap closed.">
+        <div class="sl-label me" style="grid-row: 1">Me</div>
+        <div class="sl-lane me" style="grid-row: 1"></div>
+        <div class="sl-label" style="grid-row: 2">Risk</div>
+        <div class="sl-lane" style="grid-row: 2"></div>
+        <div class="sl-label" style="grid-row: 3">Technology</div>
+        <div class="sl-lane" style="grid-row: 3"></div>
+        <div class="sl-label" style="grid-row: 4">Operations</div>
+        <div class="sl-lane" style="grid-row: 4"></div>
+
+        <div class="sl-box to-right" data-lane="Me" style="grid-row: 1; grid-column: 2"><b>1</b>Spot the break in daily reconciliation</div>
+        <div class="sl-box decision to-right" data-lane="Me" style="grid-row: 1; grid-column: 3"><b>2</b>Timing difference?<small>Yes → resolve as routine</small></div>
+        <div class="sl-box to-right" data-lane="Me" style="grid-row: 1; grid-column: 4"><b>3</b>Trace to source, find the control gap</div>
+        <div class="sl-box to-down" data-lane="Me" style="grid-row: 1; grid-column: 5"><b>4</b>Write the incident report: one fact base</div>
+        <div class="sl-box" data-lane="Risk" style="grid-row: 2; grid-column: 5"><b>5</b>Agree measures; sign off the control</div>
+        <div class="sl-box" data-lane="Technology" style="grid-row: 3; grid-column: 5"><b>6</b>Build the system fix</div>
+        <div class="sl-box" data-lane="Operations" style="grid-row: 4; grid-column: 5"><b>7</b>Run interim manual checks</div>
+        <div class="sl-box decision to-right" data-lane="Me" style="grid-row: 1; grid-column: 6"><b>8</b>Retest: does the fix work?<small>No → back to the owner</small></div>
+        <div class="sl-box end" data-lane="Me" style="grid-row: 1; grid-column: 7"><b>9</b>Close the case<small>Exposure resolved, gap closed</small></div>
+      </div>
+    </div>
+    <figcaption>Steps 5 to 7 ran in parallel, each owned by a different department. My job was the fact base that let them agree, and the retest that let us close.</figcaption>
+  </figure>
+
+  <!-- ===== 6. THE KEY DECISION ===== -->
+  <div class="callout">
+    <h3>The call I made</h3>
+    <p><strong>Investigate, even though the controls said everything was fine.</strong> It's easy to trust a system that hasn't raised an alert. I trusted the evidence instead, and checked it thoroughly before raising it.</p>
+  </div>
+
+  <!-- ===== 7. HOW I WORKED THE CASE ===== -->
+  <section aria-labelledby="artifacts-h">
+    <h2 id="artifacts-h">How I worked the case</h2>
+    <figure class="artifact">
+      <div class="artifact-head"><h3>Who owned what</h3><span class="tag-illustration">Generalised</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Party</th><th scope="col">Owned</th></tr></thead>
+          <tbody>
+            <tr><td>Risk</td><td>Control design and sign-off on the measures</td></tr>
+            <tr><td>Technology</td><td>The system fix</td></tr>
+            <tr><td>Operations</td><td>Interim review steps while the fix was built</td></tr>
+            <tr><td>Me</td><td>Connecting the dots and driving to closure</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </figure>
+  </section>
+
+  <!-- ===== 8. RESULTS ===== -->
+  <section aria-labelledby="results-h">
+    <h2 id="results-h">Results</h2>
+    <div class="results">
+      <div class="result-col verified">
+        <h3>What happened</h3>
+        <ul>
+          <li>The eight-figure exposure was resolved and the control gap closed.</li>
+          <li>Every fix was retested before the case was closed.</li>
+          <li>Across 40+ incident reports I wrote with development teams, break-tracking accuracy improved by 10%.</li>
+        </ul>
+      </div>
+      <div class="result-col proposed">
+        <h3>What I'd measure next</h3>
+        <ul>
+          <li>Share of breaks caught by automated controls vs. manual review.</li>
+          <li>Time from a break occurring to it being detected.</li>
+          <li>Repeat breaks with the same root cause.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 11. SKILLS ===== -->
+  <section aria-labelledby="skills-h">
+    <h2 id="skills-h">Skills used</h2>
+    <ul class="tags">
+      <li>Root cause analysis</li><li>Reconciliation</li><li>Risk &amp; controls</li><li>Incident reporting</li><li>Stakeholder alignment</li><li>Issue management</li>
+    </ul>
+  </section>
+
+  <!-- ===== 12. PREVIOUS / NEXT ===== -->
+  <nav class="pager" aria-label="More experience">
+    <a href="../../index.html#work"><small>← Back</small>All experience</a>
+    <a class="next" href="../02-sla-performance/index.html"><small>Next →</small>SLA Performance Analysis</a>
+  </nav>
+</main>
+
+<!-- ===== FOOTER (same on every page) ===== -->
+<footer class="site-footer">
+  © 2026 Cudjoe John Smith · <a href="mailto:cjohnsmith8@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/c-john-smith/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/CJsmith-page" target="_blank" rel="noopener">GitHub</a>
+</footer>
+</body>
+</html>

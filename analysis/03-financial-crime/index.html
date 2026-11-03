@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Financial Crime Analytics | Cudjoe John Smith</title>
+  <meta name="description" content="Financial crime analytics on synthetic IBM anti-money laundering data using SQL and Power BI: which monitoring rules catch the most laundering for the fewest alerts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== HEADER (same on every page) ===== -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a class="nav-name" href="../../index.html">Business Analyst Portfolio</a>
+    <div class="nav-links">
+      <a href="../../index.html#work">Experience</a>
+      <a href="../../index.html#analysis">Power BI</a>
+      <a href="../../index.html#about">About</a>
+      <a class="nav-li" aria-label="LinkedIn" href="https://www.linkedin.com/in/c-john-smith/" target="_blank" rel="noopener"><svg class="li-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span class="li-text">LinkedIn</span></a>
+      <a class="btn" href="../../index.html#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="analysis">
+  <a class="crumb" href="../../index.html#analysis">← All Power BI projects</a>
+
+  <div class="project">
+    <!-- ===== 1. TITLE, THREE-POINT SUMMARY, DASHBOARD ===== -->
+    <section class="project-top" aria-labelledby="title">
+      <span class="label data">Synthetic data · IBM AMLworld</span>
+      <h1 id="title">Financial Crime Analytics<br>A Monitoring Rule Review</h1>
+      <p class="lede deliverable">Examination of simulated financial transaction data to identify money laundering patterns, payment behaviours and the effectiveness of monitoring rules.</p>
+      <p class="meta-line scope"><span>IBM AMLworld (synthetic)</span><span>137,936 laundering transfers</span><span>16,467 schemes</span></p>
+      <ul class="glance" aria-label="Project summary">
+        <li><span class="glance-key">Problem</span><span>Monitoring rules have to catch laundering without burying analysts in alerts that lead nowhere.</span></li>
+        <li><span class="glance-key">Finding</span><span>Six rules detect 97.2% of 16,467 schemes, but two network rules raise 8.3 alerts per scheme while catching almost nothing unique.</span></li>
+        <li><span class="glance-key">Recommendation</span><span>Retire three rules: 37% fewer alerts for less than one point of detection (97.2% to 96.3%).</span></li>
+      </ul>
+      <figure class="dashboard">
+        <img src="dashboard.png" alt="Power BI laundering overview showing 137,936 laundering transfers, 16,467 schemes, laundering by currency, by month, by payment format and by hour of the day">
+        <figcaption>The Power BI laundering overview page (synthetic data)</figcaption>
+      </figure>
+      <div class="buttons">
+        <a class="btn" href="https://github.com/CJsmith-page/powerbi-financial-crime" target="_blank" rel="noopener">View repository</a>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-financial-crime/blob/main/dashboard/Financial_Crime_Dashboard.pdf" target="_blank" rel="noopener">Dashboard PDF</a>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-financial-crime/blob/main/docs/Project_Brief.md" target="_blank" rel="noopener">Project Brief</a>
+      </div>
+    </section>
+
+    <!-- ===== 2. SECTIONS (two columns) =====
+         Each article block is one panel. Add or remove panels in pairs to keep the grid even. -->
+    <section class="posts">
+      <article>
+        <h2>The Business Problem</h2>
+        <p>Transaction monitoring rules raise alerts that analysts must review. Too few rules miss laundering; too many bury the team in alerts that lead nowhere. Every rule has to earn its place.</p>
+        <p>The project brief defined four stakeholders and what each needs: the head of financial crime operations (fewer alerts), analysts (alerts worth reviewing), Compliance (evidence that coverage stays high) and rule governance (a documented case for every change).</p>
+        <p>These needs became seven business questions and four KPIs: alerts, scheme detection rate, alerts per scheme and unique schemes.</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-financial-crime/blob/main/docs/Project_Brief.md" target="_blank" rel="noopener">View Brief</a>
+      </article>
+
+      <article>
+        <h2>The Dashboard for Stakeholders</h2>
+        <a href="https://github.com/CJsmith-page/powerbi-financial-crime/blob/main/dashboard/Financial_Crime_Dashboard.pdf" target="_blank" rel="noopener"><img src="powerbi_preview.png" alt="Column chart showing the large-transfer rule detects 77.1% of schemes at $10,000 but only 14.8% at $25,000"></a>
+        <p>Four pages: the laundering overview (volume by currency, payment format, month and hour), patterns (amount bands and scheme types), rule performance (detection, alerts per scheme and unique catches for each rule) and the tuning plan with KPIs.</p>
+        <p>Every chart title states its finding, and every page is labelled as synthetic data.</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-financial-crime/blob/main/dashboard/Financial_Crime_Dashboard.pdf" target="_blank" rel="noopener">View Dashboard</a>
+      </article>
+
+      <article>
+        <h2>Key Findings</h2>
+        <ol>
+          <li><strong>Coverage is near complete.</strong> Together the six rules detect 97.2% of the 16,467 schemes; most of the 460 they miss contain only one or two transfers.<span class="implication"><b>Implication:</b> little detection would be lost by simplifying the rule set.</span></li>
+          <li><strong>Two rules do most of the work.</strong> The foreign-currency rule detects 82% of schemes and the $10,000 large-transfer rule 77%, and each catches hundreds of schemes no other rule does.<span class="implication"><b>Implication:</b> these are the rules to protect.</span></li>
+          <li><strong>Network rules are costly.</strong> The many-senders and many-receivers rules raise 8.3 alerts for every scheme they detect, yet each catches only 17 schemes that no other rule catches.<span class="implication"><b>Implication:</b> they add analyst workload with almost no unique value.</span></li>
+          <li><strong>There is no evidence of structuring.</strong> Transfers just below $10,000 are no more common than transfers in any other $1,000 band.<span class="implication"><b>Implication:</b> a structuring rule has nothing to catch in this data.</span></li>
+          <li><strong>Laundering happens mostly by day.</strong> Only 14.5% of laundering transfers occur at night, a period covering a quarter of the day.<span class="implication"><b>Implication:</b> a night-time rule is unlikely to be efficient.</span></li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>Rule-Tuning Plan</h2>
+        <ol>
+          <li><strong>Retire the network rules (R3 and R4).</strong> Together with the structuring rule, this cuts alerts by 37% while scheme detection falls by less than one point, from 97.2% to 96.3%.<span class="rec-meta">Addresses finding 3 · <b>Measure:</b> total alerts and scheme detection rate.</span></li>
+          <li><strong>Retire the structuring rule (R2).</strong> There is no structuring to catch.<span class="rec-meta">Addresses finding 4 · <b>Measure:</b> detection rate after removal.</span></li>
+          <li><strong>Keep the large-transfer threshold at $10,000.</strong> Raising it to $25,000 would cut the rule’s detection from 77% to 15%.<span class="rec-meta">Addresses finding 2 · <b>Measure:</b> detection rate of the large-transfer rule.</span></li>
+          <li><strong>Test the broad rules for false alerts.</strong> Run the night-time and foreign-currency rules on the full transactions file before relying on them.<span class="rec-meta">Addresses the data limitation · <b>Measure:</b> false alerts per true alert.</span></li>
+          <li><strong>Track the KPIs monthly.</strong> Hold scheme detection at 96% or more, and cut alerts per scheme by a third.<span class="rec-meta">Rule governance · <b>Measure:</b> detection rate and alerts per scheme.</span></li>
+        </ol>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-financial-crime" target="_blank" rel="noopener">View repository</a>
+      </article>
+
+      <article>
+        <h2>How the Rules Were Tested</h2>
+        <a href="https://github.com/CJsmith-page/powerbi-financial-crime/blob/main/sql/Amlrulesanalysis.sql" target="_blank" rel="noopener"><img src="sql_preview.png" alt="SQL query counting alerts, schemes detected and alerts per scheme for each rule"></a>
+        <p>The analysis was built in SQLite using DBeaver, with simple SQL throughout. Each rule is one CASE statement, or a count of an account’s senders or receivers joined back to the transfers. A scheme counts as detected if any of its transfers raises an alert.</p>
+        <p>Thirteen queries follow, from what laundering looks like to each rule’s detection rate, workload and unique catches, the patterns that slip through, and the effect of tuning. Each query carries a comment stating the business question and the result.</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-financial-crime/blob/main/sql/Amlrulesanalysis.sql" target="_blank" rel="noopener">View SQL</a>
+      </article>
+
+      <article>
+        <h2>Understanding the Data</h2>
+        <p>Real labelled laundering data cannot be published, so IBM researchers simulated a financial system and labelled every laundering transfer. I used IBM’s companion patterns file, which holds only the laundering transfers, grouped into schemes such as fan-in, fan-out and cycle.</p>
+        <p>Limitation: the file shows what each rule catches and what it costs in alerts, but not false alerts on normal payments. Measuring those on the full transactions file is the first step in the tuning plan.</p>
+        <p>Data checks caught a silent error. Some account IDs, such as 800E49350, look like numbers in scientific notation, and on the first import DBeaver read 4,419 of them as numbers, merging them into 1,862 values and inflating two rules. Importing the IDs as text fixed it, and a one-line check now confirms it on every run.</p>
+      </article>
+    </section>
+  </div>
+
+  <p class="project-source">Data: <a href="https://www.kaggle.com/datasets/ealtman2019/ibm-transactions-for-anti-money-laundering-aml">IBM Transactions for Anti-Money Laundering</a> (synthetic)<br>
+  Tools: SQLite (DBeaver) &middot; Power BI</p>
+
+  <!-- ===== 3. PREVIOUS / NEXT ===== -->
+  <nav class="pager" aria-label="More Power BI projects">
+    <a href="../02-bank-consolidation/index.html"><small>← Previous</small>US Bank Consolidation &amp; Branch Impact</a>
+    <a class="next" href="../04-hotel-cancellations/index.html"><small>Next →</small>Hotel Booking Cancellations</a>
+  </nav>
+</main>
+
+<!-- ===== FOOTER (same on every page) ===== -->
+<footer class="site-footer">
+  © 2026 Cudjoe John Smith · <a href="mailto:cjohnsmith8@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/c-john-smith/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/CJsmith-page" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+</body>
+</html>

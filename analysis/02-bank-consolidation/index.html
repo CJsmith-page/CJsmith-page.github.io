@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>US Bank Consolidation &amp; Branch Impact | Cudjoe John Smith</title>
+  <meta name="description" content="A business analysis of FDIC bank structure changes using SQL and Power BI: how fast US banks are consolidating, who is buying whom, and what mergers mean for branches and customers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== HEADER (same on every page) ===== -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a class="nav-name" href="../../index.html">Business Analyst Portfolio</a>
+    <div class="nav-links">
+      <a href="../../index.html#work">Experience</a>
+      <a href="../../index.html#analysis">Power BI</a>
+      <a href="../../index.html#about">About</a>
+      <a class="nav-li" aria-label="LinkedIn" href="https://www.linkedin.com/in/c-john-smith/" target="_blank" rel="noopener"><svg class="li-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span class="li-text">LinkedIn</span></a>
+      <a class="btn" href="../../index.html#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="analysis">
+  <a class="crumb" href="../../index.html#analysis">← All Power BI projects</a>
+
+  <div class="project">
+    <!-- ===== 1. TITLE, THREE-POINT SUMMARY, DASHBOARD ===== -->
+    <section class="project-top" aria-labelledby="title">
+      <span class="label data">Public data · FDIC</span>
+      <h1 id="title">US Bank Consolidation &amp; Branch Impact<br>A Business Analysis</h1>
+      <p class="lede deliverable">Assessment of US banking consolidation trends, examining merger activity, branch network changes and potential customer impact.</p>
+      <p class="meta-line scope"><span>FDIC structure change history</span><span>Banks: Jan 2020 – Sep 2022</span><span>Branches: one-in-eight sample</span></p>
+      <ul class="glance" aria-label="Project summary">
+        <li><span class="glance-key">Problem</span><span>A merger is the largest change programme a bank undertakes. The integration team needed to know how fast banks are consolidating, and what that means for branches and customers.</span></li>
+        <li><span class="glance-key">Finding</span><span>361 banks were absorbed while only 28 opened. Nine deals moved half of the 4,800 acquired branches, and buyers closed 81% more branches in the year after a merger.</span></li>
+        <li><span class="glance-key">Recommendation</span><span>A merger integration readiness checklist: reconcile before cutover, plan the first 12 months, protect at-risk customers and test the cutover.</span></li>
+      </ul>
+      <figure class="dashboard">
+        <img src="dashboard.png" alt="Power BI branch impact page showing 971 branch openings, 2,194 closings, 2.3 closings per opening, closings by year, closings after mergers, states losing the most branches and closings by branch type">
+        <figcaption>The Power BI branch impact page</figcaption>
+      </figure>
+      <div class="buttons">
+        <a class="btn" href="https://github.com/CJsmith-page/powerbi-bank-consolidation" target="_blank" rel="noopener">View repository</a>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-bank-consolidation/blob/main/dashboard/Bank_Consolidation_Dashboard.pdf" target="_blank" rel="noopener">Dashboard PDF</a>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-bank-consolidation/blob/main/docs/Project_Brief.md" target="_blank" rel="noopener">Project Brief</a>
+      </div>
+    </section>
+
+    <!-- ===== 2. SECTIONS (two columns) =====
+         Each article block is one panel. Add or remove panels in pairs to keep the grid even. -->
+    <section class="posts">
+      <article>
+        <h2>The Business Problem</h2>
+        <p>A merger is the largest change programme a bank goes through. Behind the scenes it is reconciliation and data migration at scale: accounts, positions and collateral must match across two systems before cutover, and branches are often closed afterwards.</p>
+        <p>The project brief defined four stakeholders and what each needs: the integration programme director (how large merger programmes are), the head of the branch network (when closures happen), reconciliation leads (what has to move) and Compliance (protecting customers through closure notices and complaints).</p>
+        <p>These needs became ten business questions and five KPIs: mergers, net change in banks, branches acquired, closings per opening and closings after a merger.</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-bank-consolidation/blob/main/docs/Project_Brief.md" target="_blank" rel="noopener">View Brief</a>
+      </article>
+
+      <article>
+        <h2>The Dashboard for Stakeholders</h2>
+        <a href="https://github.com/CJsmith-page/powerbi-bank-consolidation/blob/main/dashboard/Bank_Consolidation_Dashboard.pdf" target="_blank" rel="noopener"><img src="powerbi_preview.png" alt="Column chart comparing each deal size band's share of mergers with its share of branches acquired"></a>
+        <p>Four pages: the change overview (KPIs and every type of change by year), consolidation (who is buying whom, by state, deal size and buyer), branch impact (openings against closings, with post-merger closings flagged) and the merger integration readiness checklist with KPIs and caveats.</p>
+        <p>Every chart title states its finding, and filters let a manager focus on one year or one state.</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-bank-consolidation/blob/main/dashboard/Bank_Consolidation_Dashboard.pdf" target="_blank" rel="noopener">View Dashboard</a>
+      </article>
+
+      <article>
+        <h2>Key Findings</h2>
+        <ol>
+          <li><strong>US banks are consolidating.</strong> FDIC-insured banks fell by a net 357 in 33 months: 361 mergers, 4 failures and 20 voluntary closings, against only 28 new banks.<span class="implication"><b>Implication:</b> merger integration is a recurring, industry-wide change programme, not a one-off.</span></li>
+          <li><strong>Deals are fewer but larger.</strong> The average merger moved 8.4 branches in 2020 and 19.2 in 2022. Nine deals, 2.5% of all mergers, moved half of the 4,800 branches that changed hands.<span class="implication"><b>Implication:</b> integration risk is concentrated in a small number of very large programmes.</span></li>
+          <li><strong>Closures follow mergers.</strong> Buyers closed 81% more branches in the year after a merger than in the year before, while openings stayed flat.<span class="implication"><b>Implication:</b> the first 12 months after a merger are when customers are most affected.</span></li>
+          <li><strong>The pace of closures is easing.</strong> Closings per opening fell from 3.5 in 2021 to 1.0 in 2026.<span class="implication"><b>Implication:</b> the network is stabilising overall, so post-merger closures stand out more clearly.</span></li>
+          <li><strong>In-store branches are hit hardest.</strong> They close 17 times for every one that opens.<span class="implication"><b>Implication:</b> customers of in-store branches need the most support during a closure.</span></li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>Recommendations</h2>
+        <ol>
+          <li><strong>Reconcile before cutover.</strong> Reconcile every account daily in the final weeks, matching records on stable IDs, never on names.<span class="rec-meta">Addresses finding 2 · <b>Measure:</b> unreconciled accounts at cutover.</span></li>
+          <li><strong>Plan the first 12 months.</strong> Make branch decisions and send customer notices early, because post-merger closures cluster in the first year.<span class="rec-meta">Addresses finding 3 · <b>Measure:</b> closures announced with full notice.</span></li>
+          <li><strong>Protect the customers most at risk.</strong> Give at least 90 days’ notice of a closure, with extra support for customers of in-store and rural branches.<span class="rec-meta">Addresses finding 5 · <b>Measure:</b> complaints linked to branch closures.</span></li>
+          <li><strong>Test the cutover.</strong> Test payments, cards and online banking with converted data, against clear go/no-go criteria.<span class="rec-meta">Reduces cutover risk · <b>Measure:</b> defects found before versus after go-live.</span></li>
+          <li><strong>Measure the customer impact.</strong> Compare complaints in the 90 days after a merger with the 90 days before.<span class="rec-meta">Closes the loop · <b>Measure:</b> change in complaint volume after a merger.</span></li>
+        </ol>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-bank-consolidation" target="_blank" rel="noopener">View repository</a>
+      </article>
+
+      <article>
+        <h2>How the Analysis Was Done</h2>
+        <a href="https://github.com/CJsmith-page/powerbi-bank-consolidation/blob/main/sql/Bankconsolidationanalysis.sql" target="_blank" rel="noopener"><img src="sql_preview.png" alt="SQL query showing mergers and branches acquired by deal size"></a>
+        <p>The analysis was built in SQLite using DBeaver. A validation view first labels every row with a data-quality check. The script then builds a clean events table, a de-duplicated mergers table and a flag for branch closings within 12 months of the bank’s merger.</p>
+        <p>Nineteen queries follow, from what the extract contains and the pace of consolidation to who is buying whom and what happens to branches after a merger. Each query carries a comment stating the business question and the result.</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-bank-consolidation/blob/main/sql/Bankconsolidationanalysis.sql" target="_blank" rel="noopener">View SQL</a>
+      </article>
+
+      <article>
+        <h2>Understanding the Data</h2>
+        <p>The FDIC download stops at exactly 10,000 rows, so before drawing conclusions I established what the file actually contained. Bank-level records, such as mergers and failures, are complete for everything processed up to October 2022, so bank-level results cover January 2020 to September 2022.</p>
+        <p>Branch records have random IDs, and the file holds every ID beginning 00 to 1f: one in eight of all possible IDs. That makes them a consistent one-in-eight sample in every year, so branch results are reported as shares and trends, not totals.</p>
+        <p>I also removed credit unions, de-duplicated mergers recorded from both sides, and joined every table on the bank’s FDIC certificate number, because bank names change but the certificate number does not.</p>
+      </article>
+    </section>
+  </div>
+
+  <p class="project-source">Data: <a href="https://banks.data.fdic.gov">FDIC BankFind Suite</a>, structure change history<br>
+  Tools: SQLite (DBeaver) &middot; Power BI</p>
+
+  <!-- ===== 3. PREVIOUS / NEXT ===== -->
+  <nav class="pager" aria-label="More Power BI projects">
+    <a href="../01-consumer-complaints/index.html"><small>← Previous</small>Consumer Complaints &amp; Response SLA</a>
+    <a class="next" href="../03-financial-crime/index.html"><small>Next →</small>Financial Crime Analytics</a>
+  </nav>
+</main>
+
+<!-- ===== FOOTER (same on every page) ===== -->
+<footer class="site-footer">
+  © 2026 Cudjoe John Smith · <a href="mailto:cjohnsmith8@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/c-john-smith/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/CJsmith-page" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hotel Booking Cancellations | Cudjoe John Smith</title>
+  <meta name="description" content="A business analysis of hotel booking cancellations using SQL and Power BI: where the revenue is lost and which policy would protect it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== HEADER (same on every page) ===== -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a class="nav-name" href="../../index.html">Business Analyst Portfolio</a>
+    <div class="nav-links">
+      <a href="../../index.html#work">Experience</a>
+      <a href="../../index.html#analysis">Power BI</a>
+      <a href="../../index.html#about">About</a>
+      <a class="nav-li" aria-label="LinkedIn" href="https://www.linkedin.com/in/c-john-smith/" target="_blank" rel="noopener"><svg class="li-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span class="li-text">LinkedIn</span></a>
+      <a class="btn" href="../../index.html#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="analysis">
+  <a class="crumb" href="../../index.html#analysis">← All Power BI projects</a>
+
+  <div class="project">
+    <!-- ===== 1. TITLE, THREE-POINT SUMMARY, DASHBOARD ===== -->
+    <section class="project-top" aria-labelledby="title">
+      <span class="label data">Public data</span>
+      <h1 id="title">Hotel Booking Cancellations<br>A Business Analysis</h1>
+      <p class="lede deliverable">Exploration of hotel booking and cancellation patterns, highlighting revenue exposure, booking channel trends and seasonal variations.</p>
+      <p class="meta-line scope"><span>Two hotels in Portugal</span><span>117,429 bookings</span><span>Jul 2015 – Aug 2017</span></p>
+      <ul class="glance" aria-label="Project summary">
+        <li><span class="glance-key">Problem</span><span>37.5% of 117,429 bookings at two hotels were cancelled, putting up to €16.7M of revenue at risk.</span></li>
+        <li><span class="glance-key">Finding</span><span>Bookings made far ahead and online travel agents drive the losses. A 99.4% cancellation rate on non-refundable bookings needed investigating, not reporting.</span></li>
+        <li><span class="glance-key">Recommendation</span><span>Require a deposit on bookings made more than 90 days ahead, protecting about €0.8M a year.</span></li>
+      </ul>
+      <figure class="dashboard">
+        <img src="dashboard.png" alt="Power BI dashboard showing total bookings, cancellation rate, revenue earned and lost, and cancellation rates by booking window, deposit type, sales channel and month">
+        <figcaption>The Power BI dashboard for management</figcaption>
+      </figure>
+      <div class="buttons">
+        <a class="btn" href="https://github.com/CJsmith-page/powerbi-hotel-cancellations" target="_blank" rel="noopener">View repository</a>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-hotel-cancellations/blob/main/dashboard/Hotel_Cancellation_Dashboard.pdf" target="_blank" rel="noopener">Dashboard PDF</a>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-hotel-cancellations/blob/main/docs/Project_Brief.md" target="_blank" rel="noopener">Project Brief</a>
+      </div>
+    </section>
+
+    <!-- ===== 2. SECTIONS (two columns) =====
+         Each article block is one panel. Add or remove panels in pairs to keep the grid even. -->
+    <section class="posts">
+      <article>
+        <h2>The Business Problem</h2>
+        <p>Cancellations hurt a hotel twice: the revenue it planned on disappears, and the room often cannot be sold to someone else in time.</p>
+        <p>The project brief defined five stakeholders and what each needs: the General Manager (the size of the problem and a clear recommendation), the Revenue Manager (which channels, booking windows and months lose the most), Sales (which partners cancel most), Front Office (the busiest months for staffing) and Marketing (whether loyal and engaged guests are more reliable).</p>
+        <p>These needs became ten business questions and four KPIs: cancellation rate, revenue earned, revenue lost and lead time (the number of days between booking and arrival).</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-hotel-cancellations/blob/main/docs/Project_Brief.md" target="_blank" rel="noopener">View Brief</a>
+      </article>
+
+      <article>
+        <h2>The Dashboard for Stakeholders</h2>
+        <a href="https://github.com/CJsmith-page/powerbi-hotel-cancellations/blob/main/dashboard/Hotel_Cancellation_Dashboard.pdf" target="_blank" rel="noopener"><img src="powerbi_preview.png" alt="Column chart showing cancellation rate rising from 9.7% for bookings made within a week to 57.2% for bookings made over six months ahead"></a>
+        <p>The dashboard gives management the whole picture on one page. Four cards show total bookings, cancellation rate, revenue earned and revenue lost, and a hotel filter lets each manager switch between the city and resort hotels.</p>
+        <p>Every chart title states its finding: cancellations rise steadily with lead time, non-refundable bookings behave unusually, online travel agents lose the most revenue, and the summer months, led by August, lose the most money.</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-hotel-cancellations/blob/main/dashboard/Hotel_Cancellation_Dashboard.pdf" target="_blank" rel="noopener">View Dashboard</a>
+      </article>
+
+      <article>
+        <h2>Key Findings</h2>
+        <ol>
+          <li><strong>The earlier the booking, the higher the risk.</strong> 9.7% of bookings made within a week were cancelled, rising to 57.2% for bookings made more than six months ahead.<span class="implication"><b>Implication:</b> lead time is the clearest lever for a deposit policy.</span></li>
+          <li><strong>The City Hotel has the bigger problem.</strong> It cancelled 42.2% of bookings, against 28.1% at the resort, and lost €10.9M, almost twice as much.<span class="implication"><b>Implication:</b> any policy change should be tested at the City Hotel first.</span></li>
+          <li><strong>Online travel agents cost the most.</strong> They account for €10.2M of lost revenue, and group bookings have the highest cancellation rate, at 61.7%.<span class="implication"><b>Implication:</b> channel and group contracts are a second lever.</span></li>
+          <li><strong>The deposit data needs checking before any decision.</strong> Non-refundable bookings were cancelled 99.4% of the time. 97% came from Portuguese groups and travel agents booking 213 days ahead on average, which suggests rooms blocked in advance and released later.<span class="implication"><b>Implication:</b> if those deposits were kept, the real loss is nearer €13.1M than €16.7M.</span></li>
+          <li><strong>Engaged guests are reliable.</strong> Repeat guests cancelled 16.2% of the time and guests who made special requests 22.0%, against 37.5% overall.<span class="implication"><b>Implication:</b> pre-arrival engagement is a low-cost way to reduce cancellations.</span></li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>Recommendations</h2>
+        <ol>
+          <li><strong>Require a deposit on early bookings.</strong> Apply it to bookings made more than 90 days ahead; the business case estimates about €0.8M protected a year.<span class="rec-meta">Addresses finding 1 · <b>Measure:</b> cancellation rate for bookings made 90+ days ahead.</span></li>
+          <li><strong>Tighten group and agent contracts.</strong> Release unsold blocked rooms earlier and limit how many rooms can be held without payment.<span class="rec-meta">Addresses finding 3 · <b>Measure:</b> cancellation rate and lost revenue by channel.</span></li>
+          <li><strong>Investigate before acting.</strong> Confirm with Reservations and Finance how non-refundable bookings are recorded and whether deposits were paid.<span class="rec-meta">Addresses finding 4 · <b>Measure:</b> confirmed revenue at risk.</span></li>
+          <li><strong>Engage guests before arrival.</strong> Send pre-arrival emails inviting special requests, and reward repeat guests with a loyalty offer.<span class="rec-meta">Addresses finding 5 · <b>Measure:</b> cancellation rate for engaged guests against all others.</span></li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>The Business Case</h2>
+        <p>The first recommendation targets the 39,178 bookings made more than 90 days ahead with no deposit. Of these, 36.5% were cancelled, losing €7.0M over the 26 months of data.</p>
+        <p>Assumption: if a deposit prevented, or paid for, just a quarter of those cancellations, the hotels would protect about €1.76M, roughly €0.8M a year. Because the policy applies only to bookings made far in advance, guests who book closer to their stay, who already cancel least, are unaffected.</p>
+        <p>Next steps: confirm the non-refundable figures with Finance, agree the deposit level with the Revenue Manager, and track the cancellation rate monthly on the dashboard after the change.</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-hotel-cancellations" target="_blank" rel="noopener">View repository</a>
+      </article>
+
+      <article>
+        <h2>How the Analysis Was Done</h2>
+        <a href="https://github.com/CJsmith-page/powerbi-hotel-cancellations/blob/main/sql/Hotelcancellationanalysis.sql" target="_blank" rel="noopener"><img src="sql_preview.png" alt="SQL query comparing cancellation rates by how far ahead guests booked"></a>
+        <p>The analysis was built in SQLite using DBeaver. The first step builds a clean bookings table, calculates the number of nights and the value of each booking, and removes 1,961 bookings with no nights or an impossible price.</p>
+        <p>Each business question then uses simple SQL: COUNT and SUM for the KPIs, CASE to group bookings by how far ahead they were made, and GROUP BY to compare hotels, channels, deposit types and months. A follow-up query investigates the surprising deposit result before any conclusion is drawn.</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-hotel-cancellations/blob/main/sql/Hotelcancellationanalysis.sql" target="_blank" rel="noopener">View SQL</a>
+      </article>
+    </section>
+  </div>
+
+  <p class="project-source">Data: <a href="https://doi.org/10.1016/j.dib.2018.11.126">Hotel Booking Demand, Antonio, Almeida &amp; Nunes (2019), Data in Brief</a><br>
+  Tools: SQLite (DBeaver) &middot; Power BI &middot; Excel</p>
+
+  <!-- ===== 3. PREVIOUS / NEXT ===== -->
+  <nav class="pager" aria-label="More Power BI projects">
+    <a href="../03-financial-crime/index.html"><small>← Previous</small>Financial Crime Analytics</a>
+    <a class="next" href="../05-online-retail/index.html"><small>Next →</small>Online Retail Analysis</a>
+  </nav>
+</main>
+
+<!-- ===== FOOTER (same on every page) ===== -->
+<footer class="site-footer">
+  © 2026 Cudjoe John Smith · <a href="mailto:cjohnsmith8@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/c-john-smith/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/CJsmith-page" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+</body>
+</html>

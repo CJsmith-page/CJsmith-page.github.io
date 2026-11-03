@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online Retail Analysis | Cudjoe John Smith</title>
+  <meta name="description" content="A Power BI dashboard for a UK online retailer, built from two years of sales data: who the customers are, which markets and seasons drive revenue, and what to do about it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== HEADER (same on every page) ===== -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a class="nav-name" href="../../index.html">Business Analyst Portfolio</a>
+    <div class="nav-links">
+      <a href="../../index.html#work">Experience</a>
+      <a href="../../index.html#analysis">Power BI</a>
+      <a href="../../index.html#about">About</a>
+      <a class="nav-li" aria-label="LinkedIn" href="https://www.linkedin.com/in/c-john-smith/" target="_blank" rel="noopener"><svg class="li-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span class="li-text">LinkedIn</span></a>
+      <a class="btn" href="../../index.html#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="analysis">
+  <a class="crumb" href="../../index.html#analysis">← All Power BI projects</a>
+
+  <div class="project">
+    <!-- ===== 1. TITLE, THREE-POINT SUMMARY, DASHBOARD ===== -->
+    <section class="project-top" aria-labelledby="title">
+      <span class="label data">Public data · UCI</span>
+      <h1 id="title">Online Retail Analysis<br>A Customer and Revenue Review</h1>
+      <p class="lede deliverable">Exploration of online retail sales data, highlighting customer concentration, international markets and seasonal demand.</p>
+      <p class="meta-line scope"><span>UK online retailer (UCI)</span><span>44,714 orders</span><span>Dec 2009 – Dec 2011</span></p>
+      <ul class="glance" aria-label="Project summary">
+        <li><span class="glance-key">Problem</span><span>A UK online gift retailer needed to know which customers, markets and seasons drive its revenue.</span></li>
+        <li><span class="glance-key">Finding</span><span>£19.47M across 44,714 orders. A £435.53 average order, office-hour buying and almost no Saturday trade reveal a wholesale business; ten customers generate about 14% of sales.</span></li>
+        <li><span class="glance-key">Recommendation</span><span>Look after the top accounts, stock up before September, grow overseas customers and flag unusually large orders.</span></li>
+      </ul>
+      <figure class="dashboard">
+        <img src="dashboard.png" alt="Power BI dashboard showing total sales, orders, customers, average order, monthly sales, top countries, best-selling products and orders by day">
+        <figcaption>The Power BI dashboard</figcaption>
+      </figure>
+      <div class="buttons">
+        <a class="btn" href="https://github.com/CJsmith-page/powerbi-online-retail" target="_blank" rel="noopener">View repository</a>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-online-retail/blob/main/dashboard/PBI_Online_Retail_Analysis.pdf" target="_blank" rel="noopener">Dashboard PDF</a>
+      </div>
+    </section>
+
+    <!-- ===== 2. SECTIONS (two columns) =====
+         Each article block is one panel. Add or remove panels in pairs to keep the grid even. -->
+    <section class="posts">
+      <article>
+        <h2>Key Findings</h2>
+        <ol>
+          <li><strong>This “gift shop” is a wholesale business.</strong> The average order is £435.53, and orders arrive during office hours and almost never on Saturdays.<span class="implication"><b>Implication:</b> the business should be managed around trade accounts, not individual consumers.</span></li>
+          <li><strong>Christmas decides the year.</strong> The five best months in the data all fall between September and November.<span class="implication"><b>Implication:</b> stock and staffing need to be in place before September.</span></li>
+          <li><strong>A few customers carry the business.</strong> Ten customers generate about 14% of all sales.<span class="implication"><b>Implication:</b> losing a single key account would have a material impact.</span></li>
+          <li><strong>Some overseas accounts act like distributors.</strong> Ireland is the second-largest market with only three customers, and Dutch orders average £2,545, five times the UK average.<span class="implication"><b>Implication:</b> a handful of international accounts can be worth more than whole countries.</span></li>
+          <li><strong>Big numbers need checking.</strong> The third best-selling product turned out to be a single order of 80,995 paper craft kits, cancelled twelve minutes later.<span class="implication"><b>Implication:</b> rankings must exclude cancelled and erroneous orders before they are trusted.</span></li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>Recommendations</h2>
+        <ol>
+          <li><strong>Look after the top customers.</strong> Give the biggest accounts a named contact and early access to new stock.<span class="rec-meta">Addresses finding 3 · <b>Measure:</b> revenue retained from the top ten customers.</span></li>
+          <li><strong>Prepare for autumn early.</strong> Stock up on best sellers before September, when the busiest months begin.<span class="rec-meta">Addresses finding 2 · <b>Measure:</b> stock availability during September to November.</span></li>
+          <li><strong>Grow the overseas accounts.</strong> Develop the few large international customers that behave like distributors.<span class="rec-meta">Addresses finding 4 · <b>Measure:</b> overseas revenue per account.</span></li>
+          <li><strong>Check unusual orders.</strong> Flag any order far larger than a customer’s normal size before it is processed.<span class="rec-meta">Addresses finding 5 · <b>Measure:</b> orders flagged and corrected before processing.</span></li>
+        </ol>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-online-retail" target="_blank" rel="noopener">View repository</a>
+      </article>
+
+      <article>
+        <h2>The Dashboard for Stakeholders</h2>
+        <a href="https://github.com/CJsmith-page/powerbi-online-retail/blob/main/dashboard/PBI_Online_Retail_Analysis.pdf" target="_blank" rel="noopener"><img src="powerbi_preview.png" alt="Line chart of monthly sales peaking every November"></a>
+        <p>The dashboard brings the main answers together on one page. Four cards show total sales, orders, customers and average order value. A line chart shows monthly sales rising every autumn and peaking in November, and bar charts rank the top overseas markets and best-selling products.</p>
+        <p>Orders by weekday complete the picture: Thursday is the busiest day and Saturday is almost empty, which points to trade customers rather than the public. The mistaken 80,995-unit order is excluded so it cannot distort the product rankings.</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-online-retail/blob/main/dashboard/PBI_Online_Retail_Analysis.pdf" target="_blank" rel="noopener">View Dashboard</a>
+      </article>
+
+      <article>
+        <h2>How the Analysis Was Done</h2>
+        <a href="https://github.com/CJsmith-page/powerbi-online-retail/blob/main/sql/Onlineretailanalysis.sql" target="_blank" rel="noopener"><img src="sql_preview.png" alt="SQL query finding the top countries by sales"></a>
+        <p>The analysis was built in SQLite using DBeaver. The first step creates a clean sales table that keeps only real sales, removing cancelled orders, postage and fee lines and zero-price items, so every question works from the same reliable data.</p>
+        <p>Eleven questions then use straightforward SQL: SUM and COUNT for sales, orders and customers; GROUP BY and ORDER BY to rank countries, products and customers; HAVING to compare countries with enough orders; and strftime to look at sales by year, month, weekday and hour. Each query carries a comment stating what it found.</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-online-retail/blob/main/sql/Onlineretailanalysis.sql" target="_blank" rel="noopener">View SQL</a>
+      </article>
+    </section>
+  </div>
+
+  <p class="project-source">Data: <a href="https://archive.ics.uci.edu/dataset/502/online+retail+ii">Online Retail II, UCI Machine Learning Repository</a><br>
+  Tools: SQLite (DBeaver) &middot; Power BI &middot; Excel</p>
+
+  <!-- ===== 3. PREVIOUS / NEXT ===== -->
+  <nav class="pager" aria-label="More Power BI projects">
+    <a href="../04-hotel-cancellations/index.html"><small>← Previous</small>Hotel Booking Cancellations</a>
+    <a class="next" href="../../index.html#analysis"><small>Back to →</small>All Power BI projects</a>
+  </nav>
+</main>
+
+<!-- ===== FOOTER (same on every page) ===== -->
+<footer class="site-footer">
+  © 2026 Cudjoe John Smith · <a href="mailto:cjohnsmith8@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/c-john-smith/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/CJsmith-page" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+</body>
+</html>

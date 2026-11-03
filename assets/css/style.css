@@ -1,0 +1,361 @@
+/* ==========================================================================
+   PORTFOLIO STYLESHEET
+   One file styles every page. To change the look of the whole site,
+   edit the colours and fonts in ":root" below. Nothing else needs to change.
+   ========================================================================== */
+
+:root {
+  /* Colours */
+  --bg: #0D1524;          /* page background */
+  --surface: #141F33;     /* cards and panels */
+  --surface-2: #1A2740;   /* code blocks, diagram boxes */
+  --border: #26354F;      /* lines and card edges */
+  --text: #EEF2F8;        /* main text */
+  --muted: #A7B2C6;       /* secondary text */
+  --accent: #8DB6FF;      /* links, labels, highlights */
+  --button: #2E62CC;      /* primary buttons */
+  --tag-bg: #1D2D4D;      /* skill tags */
+  --tag-text: #BBD0FF;
+  --verified: #7DD3A8;    /* "Verified" results */
+  --proposed: #F2B36B;    /* "Proposed" / illustration labels */
+
+  /* Type */
+  --font: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+  /* Layout */
+  --wide: 1160px;         /* header width */
+  --read: 780px;          /* reading column width */
+  --radius: 14px;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 1.7;
+}
+a { color: var(--accent); }
+a:hover { text-decoration: none; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+img { max-width: 100%; height: auto; }
+h1, h2, h3 { line-height: 1.2; margin: 0; }
+p { margin: 0; }
+strong { color: var(--text); }
+
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: 16px; top: 16px; background: var(--button); color: #fff; padding: 8px 14px; z-index: 10; }
+
+/* ---------- Header ---------- */
+.site-header { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--border); }
+.nav { max-width: var(--wide); margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.nav-name { font-weight: 700; color: var(--text); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-size: 15px; }
+.nav-links a { color: var(--muted); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.nav-links a:hover { color: var(--text); }
+.nav-links .btn { color: #fff; }
+.nav-links .nav-li { gap: 6px; }
+.li-icon { width: 16px; height: 16px; fill: currentColor; flex: none; }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 20px; border-radius: 8px; background: var(--button); color: #fff; font-weight: 500; font-size: 16px; text-decoration: none; }
+.btn:hover { filter: brightness(1.1); }
+.btn-secondary { background: var(--surface); border: 1px solid var(--border); color: var(--text); }
+
+/* ---------- Page layout ---------- */
+main { max-width: var(--read); margin: 0 auto; padding: 20px 24px 80px; display: flex; flex-direction: column; gap: 64px; }
+section { display: flex; flex-direction: column; gap: 18px; }
+section > h2 { font-size: 28px; letter-spacing: -0.01em; }
+.section-intro { color: var(--muted); }
+
+/* ---------- Page header ---------- */
+.page-head { gap: 12px; }
+.crumb { font-size: 15px; color: var(--muted); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; align-self: flex-start; }
+.crumb:hover { color: var(--text); }
+.label { align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent); border: 1px solid currentColor; border-radius: 6px; padding: 3px 8px; }
+.page-head h1 { font-size: clamp(30px, 4.6vw, 42px); letter-spacing: -0.02em; }
+.repo-link-inline { align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; color: var(--accent); text-decoration: none; }
+.repo-link-inline:hover { text-decoration: underline; }
+.lede { font-size: 19px; line-height: 1.55; color: var(--muted); }
+
+/* Compact one-line summary: role · context · dates · tools */
+.meta-line { display: flex; flex-wrap: wrap; margin: 0; font-size: 15px; color: var(--muted); }
+.meta-line span:not(:last-child)::after { content: "·"; margin: 0 10px; color: var(--muted); }
+
+/* Snapshot strip: role, organisation, dates, tools, people */
+.snapshot { margin: 8px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 16px; padding: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.snapshot dt { font-size: 13px; color: var(--muted); }
+.snapshot dd { margin: 0; font-weight: 500; font-size: 16px; line-height: 1.5; }
+
+/* ---------- At a glance (3 short bullets) ---------- */
+.glance { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 12px; }
+.glance li { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; font-size: 16px; line-height: 1.5; }
+.glance .glance-key { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+
+/* ---------- Hero visual: the one picture seen on the first screen ---------- */
+.hero-visual { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.page-head + .hero-visual, .hero-visual + section { margin-top: -28px; }
+.hero-visual > figcaption { font-size: 16px; color: var(--text); }
+.hero-visual > figcaption strong { color: var(--accent); }
+
+/* ---------- Steps: what I did + why ---------- */
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: flex; flex-direction: column; gap: 0; }
+.step { counter-increment: step; position: relative; padding: 0 0 32px 60px; }
+.step::before { content: counter(step); position: absolute; left: 0; top: 0; width: 38px; height: 38px; border-radius: 50%; background: var(--tag-bg); color: var(--tag-text); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.step:not(:last-child)::after { content: ""; position: absolute; left: 18px; top: 44px; bottom: 6px; width: 2px; background: var(--border); }
+.step h3 { font-size: 20px; margin-bottom: 6px; padding-top: 4px; }
+.step p + p { margin-top: 8px; }
+.why { color: var(--muted); padding-left: 14px; border-left: 2px solid var(--border); }
+.why strong { color: var(--accent); font-weight: 700; }
+
+/* ---------- Callouts ---------- */
+.callout { padding: 22px 24px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; }
+.callout h3 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.callout.note h3 { color: var(--proposed); }
+
+/* ---------- Artifacts (recreated illustrations) ---------- */
+.artifact { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.artifact-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.artifact-head h3 { font-size: 19px; }
+.tag-illustration { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--proposed); border: 1px solid currentColor; border-radius: 6px; padding: 2px 8px; }
+.artifact figcaption { font-size: 15px; color: var(--muted); }
+
+/* Tables */
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; min-width: 560px; }
+th, td { text-align: left; vertical-align: top; padding: 12px 16px; }
+thead { background: var(--surface); }
+tbody tr { border-top: 1px solid var(--border); }
+td:first-child { font-weight: 500; }
+
+/* Code */
+pre.code { margin: 0; padding: 18px 20px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; font-family: var(--mono); font-size: 14px; line-height: 1.65; overflow-x: auto; color: #D6E2F5; }
+.code .k { color: #FF7B72; } .code .s { color: #A5D6FF; } .code .n { color: #79C0FF; } .code .c { color: #8B93A8; }
+
+/* Process flow: boxes joined by arrows, wraps on small screens */
+.flow { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; align-items: stretch; }
+.flow li { flex: 1 1 96px; min-width: 0; position: relative; padding: 14px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; font-size: 15px; line-height: 1.45; }
+.flow li strong { display: block; font-size: 15px; margin-bottom: 2px; }
+.flow li span { color: var(--muted); font-size: 14px; }
+.flow-alt li.break { border-color: var(--proposed); }
+
+/* ---------- Results ---------- */
+.results { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); gap: 16px; }
+.result-col { padding: 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); display: flex; flex-direction: column; gap: 12px; }
+.result-col h3 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+.result-col.verified h3 { color: var(--verified); }
+.result-col.proposed h3 { color: var(--proposed); }
+.result-col ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 1.55; }
+
+/* ---------- Lists, tags ---------- */
+.plain-list { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; }
+.tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.tags li { font-size: 14px; padding: 5px 13px; border-radius: 999px; background: var(--tag-bg); color: var(--tag-text); }
+
+/* ---------- Interview-ready summary ---------- */
+.star { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 12px; }
+.star div { padding: 16px; border: 1px solid var(--border); border-radius: 12px; font-size: 15px; line-height: 1.55; }
+.star b { display: block; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+
+/* ---------- Previous / next ---------- */
+.pager { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px; }
+.pager a { padding: 18px 20px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text); text-decoration: none; display: flex; flex-direction: column; gap: 2px; }
+.pager a:hover { border-color: var(--accent); }
+.pager small { color: var(--muted); font-size: 14px; }
+.pager .next { text-align: right; }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; font-size: 14px; color: var(--muted); }
+.site-footer a { color: var(--muted); }
+
+/* ---------- Workflow rows (label + steps) ---------- */
+.flow-group { display: flex; flex-direction: column; gap: 18px; }
+.flow-row { display: flex; flex-direction: column; gap: 8px; }
+.flow-row-label { font-size: 14px; font-weight: 700; color: var(--muted); }
+.flow-row-label small { font-weight: 400; }
+.flow li.end { background: var(--button); border-color: var(--button); }
+.flow li.end span { color: #DCE6FA; }
+
+/* ---------- Phases (e.g. Investigate / Align / Close) ---------- */
+.phases { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 12px; }
+.phase { padding: 18px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; }
+.phase h4 { margin: 0 0 8px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.phase ol { margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.6; }
+.phase.final { background: var(--button); border-color: var(--button); }
+.phase.final h4 { color: #fff; }
+
+/* ---------- Before / after timing bars ----------
+   Each bar is positioned with  style="left: X%; width: Y%"  on a 0–100% day.
+   The dashed line (.deadline) sits at  left: 80%  = the SLA deadline. */
+.timing { padding: 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); display: flex; flex-direction: column; gap: 10px; }
+.timing h4 { margin: 8px 0 0; font-size: 15px; color: var(--muted); font-weight: 500; }
+.timing h4:first-child { margin-top: 0; }
+.bar-row { display: grid; grid-template-columns: 130px 1fr; align-items: center; gap: 12px; font-size: 15px; }
+.track { position: relative; height: 32px; }
+.bar { position: absolute; top: 0; bottom: 0; border-radius: 6px; background: #2B3D60; display: flex; align-items: center; justify-content: flex-end; padding: 0 10px; font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; }
+.bar.late { background: #B4473A; }
+.bar.ontime { background: #23806B; }
+.deadline { position: absolute; top: -6px; bottom: -6px; left: 80%; border-left: 2px dashed var(--proposed); }
+.axis { display: grid; grid-template-columns: 130px 1fr; gap: 12px; font-size: 13px; color: var(--muted); }
+.axis .track { height: auto; }
+.axis .deadline-label { position: absolute; left: 80%; transform: translateX(-50%); color: var(--proposed); font-weight: 700; white-space: nowrap; }
+@media (max-width: 560px) { .bar-row, .axis { grid-template-columns: 92px 1fr; font-size: 14px; } .bar { font-size: 12px; padding: 0 6px; } }
+
+/* ---------- Wide figure: breaks out of the reading column ---------- */
+.wide { align-self: center; width: min(1160px, calc(100vw - 48px)); }
+
+/* ---------- Swimlanes ----------
+   HOW TO EDIT
+   - Each lane is a row: a .sl-label plus a .sl-lane on the same grid-row.
+   - Each step is a .sl-box placed with  style="grid-row: R; grid-column: C"
+     Row 1 = first lane. Column 2 = first step (column 1 holds the lane names).
+   - Set the number of step columns with  style="--cols: 8"  on .swimlane.
+   - Add class "decision" for a decision, "end" for the final step,
+     "to-right" to draw an arrow to the next column, "to-down"/"to-up"
+     for a hand-off to the lane below/above. */
+.sl-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); }
+.swimlane { --cols: 8; display: grid; grid-template-columns: 150px repeat(var(--cols), minmax(118px, 1fr)); min-width: calc(150px + var(--cols) * 120px); }
+.sl-label { grid-column: 1; display: flex; align-items: center; padding: 14px; font-size: 14px; font-weight: 700; line-height: 1.35; background: var(--surface); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.sl-label.me { color: var(--accent); }
+.sl-lane { grid-column: 2 / -1; border-bottom: 1px solid var(--border); }
+.sl-lane.me { background: rgba(141, 182, 255, 0.05); }
+.sl-box { position: relative; z-index: 1; margin: 14px 12px; padding: 10px 11px; min-height: 64px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; font-size: 14px; line-height: 1.4; }
+.sl-box b { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; margin-right: 6px; border-radius: 50%; background: var(--tag-bg); color: var(--tag-text); font-size: 12px; }
+.sl-box small { display: block; margin-top: 4px; color: var(--muted); font-size: 12.5px; }
+.sl-box.decision { border: 1.5px dashed var(--proposed); }
+.sl-box.decision b { background: var(--proposed); color: #1B1408; }
+.sl-box.end { background: var(--button); border-color: var(--button); }
+.sl-box.end small { color: #DCE6FA; }
+.sl-box.to-right::after { content: "→"; position: absolute; right: -19px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 16px; }
+.sl-box.to-down::after { content: "↓"; position: absolute; left: 50%; bottom: -24px; transform: translateX(-50%); color: var(--muted); font-size: 16px; }
+.sl-box.to-up::after { content: "↑"; position: absolute; left: 50%; top: -24px; transform: translateX(-50%); color: var(--muted); font-size: 16px; }
+.sl-legend { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px; color: var(--muted); }
+.sl-legend span::before { content: ""; display: inline-block; width: 14px; height: 14px; margin-right: 6px; vertical-align: -2px; border-radius: 4px; background: var(--surface-2); border: 1px solid var(--border); }
+.sl-legend .lg-decision::before { border: 1.5px dashed var(--proposed); }
+.sl-legend .lg-end::before { background: var(--button); border-color: var(--button); }
+.scroll-hint { display: none; font-size: 14px; color: var(--muted); }
+@media (min-width: 561px) and (max-width: 900px) { .scroll-hint { display: block; } }
+/* On phones, swimlanes turn into a vertical list. Each step shows its lane name
+   (from the box's data-lane attribute), so boxes must be in step order in the HTML. */
+@media (max-width: 560px) {
+  .sl-wrap { overflow: visible; border: 0; background: none; }
+  .swimlane { display: flex; flex-direction: column; min-width: 0; }
+  .sl-label, .sl-lane { display: none; }
+  .sl-box { margin: 0 0 26px; min-height: 0; }
+  .sl-box:last-child { margin-bottom: 0; }
+  .sl-box::before { content: attr(data-lane); display: block; margin-bottom: 4px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .sl-box.end::before { color: #DCE6FA; }
+  .sl-box:not(:last-child)::after { content: "↓"; position: absolute; right: auto; top: auto; left: 50%; bottom: -24px; transform: translateX(-50%); color: var(--muted); font-size: 16px; }
+}
+
+/* ==========================================================================
+   POWER BI PROJECT PAGES  (analysis/…/index.html)
+   Centred title, three-point summary, dashboard, buttons,
+   then a two-column grid of sections.
+   ========================================================================== */
+main.analysis { max-width: 1120px; gap: 0; padding-top: 28px; }
+.project { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; }
+.project-top { padding: 48px clamp(20px, 6vw, 80px) 44px; display: flex; flex-direction: column; align-items: center; gap: 22px; border-bottom: 1px solid var(--border); }
+.project-top .label { align-self: center; }
+.project-top h1 { text-align: center; font-size: clamp(32px, 4.8vw, 50px); letter-spacing: -0.02em; line-height: 1.12; }
+.project-top .glance { width: 100%; max-width: 980px; }
+.project-top .glance li { background: var(--bg); }
+.dashboard { margin: 6px 0 0; width: 100%; max-width: 1000px; display: flex; flex-direction: column; gap: 10px; }
+.dashboard img { display: block; width: 100%; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45); }
+.dashboard figcaption { text-align: center; font-size: 15px; color: var(--muted); }
+.buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+
+.posts { display: grid; grid-template-columns: 1fr 1fr; }
+.posts article { padding: 48px clamp(20px, 4vw, 52px); border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 16px; }
+.posts article:nth-child(odd) { border-right: 1px solid var(--border); }
+.posts article:nth-last-child(-n+2) { border-bottom: 0; }
+.posts h2 { font-size: 26px; letter-spacing: -0.01em; }
+.posts img { display: block; width: 100%; border-radius: 10px; border: 1px solid var(--border); }
+.posts p, .posts ol { color: #C9D2E3; font-size: 16.5px; line-height: 1.75; }
+.posts ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 12px; }
+.posts ol li::marker { color: var(--accent); font-weight: 700; }
+.posts .btn { align-self: flex-start; margin-top: auto; }
+.posts .implication, .posts .rec-meta { display: block; margin-top: 4px; font-size: 15px; line-height: 1.6; color: var(--muted); }
+.posts .implication b, .posts .rec-meta b { color: var(--accent); font-weight: 700; }
+.project-top .deliverable { max-width: 820px; text-align: center; color: var(--text); }
+.project-top .scope { justify-content: center; text-align: center; }
+.project-source { padding: 28px 24px 0; text-align: center; font-size: 15px; color: var(--muted); line-height: 1.8; }
+.project-source a { color: var(--accent); }
+main.analysis .pager { margin-top: 40px; }
+@media (max-width: 820px) {
+  .posts { grid-template-columns: 1fr; }
+  .posts article:nth-child(odd) { border-right: 0; }
+  .posts article:nth-last-child(2) { border-bottom: 1px solid var(--border); }
+}
+
+/* ==========================================================================
+   HOMEPAGE  (index.html)
+   ========================================================================== */
+main.home { max-width: var(--wide); gap: 88px; padding-top: 0; }
+.hero { max-width: 860px; margin: 0 auto; padding: 88px 0 0; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.hero-name { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+.eyebrow { font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.hero h1 { font-size: clamp(40px, 6.4vw, 64px); line-height: 1.08; letter-spacing: -0.025em; }
+.hero h1 span { color: var(--accent); }
+.hero .lede { max-width: 680px; font-size: 21px; }
+.hero .buttons { margin-top: 8px; }
+.creds { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; font-size: 15px; color: var(--muted); }
+.creds strong { color: var(--text); }
+
+.section-head { text-align: center; display: flex; flex-direction: column; gap: 8px; margin-bottom: 32px; }
+.section-head h2 { font-size: clamp(30px, 4vw, 38px); letter-spacing: -0.015em; }
+.section-head p { color: var(--muted); font-size: 18px; }
+
+.cards { display: grid; gap: 24px; }
+.cards.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); }
+.cards.three { display: flex; flex-wrap: wrap; justify-content: center; }
+.cards.three > .card { flex: 0 1 calc((100% - 48px) / 3); min-width: min(100%, 300px); }
+@media (max-width: 1020px) { .cards.three > .card { flex-basis: calc((100% - 24px) / 2); } }
+@media (max-width: 660px) { .cards.three > .card { flex-basis: 100%; } }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+.card:hover { border-color: #3A4D70; }
+.card-thumb { display: block; aspect-ratio: 16 / 9; background: var(--surface-2); border-bottom: 1px solid var(--border); overflow: hidden; }
+.card-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.card-body { padding: 26px; display: flex; flex-direction: column; gap: 14px; flex-grow: 1; }
+.card-body h3 { font-size: 22px; line-height: 1.25; }
+.card-body p { color: var(--muted); font-size: 16px; line-height: 1.6; flex-grow: 1; }
+.card-body .tags li { font-size: 13px; padding: 4px 12px; }
+.card-body .buttons { justify-content: flex-start; margin-top: 4px; }
+.card-body .btn { font-size: 15px; padding: 9px 16px; }
+.label.data { color: var(--proposed); }
+
+.about { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 40px; padding: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.about h2 { font-size: 28px; margin-bottom: 12px; }
+.about h3 { font-size: 18px; margin-bottom: 12px; }
+.about p { color: var(--muted); }
+.toolkit li { background: transparent; border: 1px solid var(--border); color: var(--text); }
+
+.contact { max-width: 760px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; padding-bottom: 24px; }
+.contact h2 { font-size: clamp(30px, 4vw, 38px); }
+.contact p { color: var(--muted); font-size: 18px; }
+
+/* ---------- Placeholders ----------
+   Anything wrapped in <mark class="todo"> still needs your input.
+   Search the project for  class="todo"  to find them all.
+   Delete the <mark> tags once the text is final. */
+mark.todo { background: rgba(242, 179, 107, 0.14); color: #F7C98F; outline: 1px dashed #F2B36B; border-radius: 4px; padding: 0 4px; }
+
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  main { gap: 52px; }
+  .page-head + .hero-visual, .hero-visual + section { margin-top: -24px; }
+  .nav { padding: 6px 16px; gap: 0; }
+  .nav-name { font-size: 16px; }
+  .nav-links { gap: 0 14px; font-size: 14px; }
+  .nav-links .btn { padding: 6px 12px; font-size: 14px; }
+  .li-text { display: none; }
+  .li-icon { width: 18px; height: 18px; }
+  .lede { font-size: 17px; }
+  .meta-line { font-size: 14px; }
+  .step { padding-left: 52px; }
+}

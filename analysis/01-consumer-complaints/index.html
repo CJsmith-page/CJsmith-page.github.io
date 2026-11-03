@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consumer Complaints &amp; Response SLA | Cudjoe John Smith</title>
+  <meta name="description" content="A business analysis of CFPB consumer complaints using SQL and Power BI: what drives complaints and late responses, and where operations should focus first.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== HEADER (same on every page) ===== -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a class="nav-name" href="../../index.html">Business Analyst Portfolio</a>
+    <div class="nav-links">
+      <a href="../../index.html#work">Experience</a>
+      <a href="../../index.html#analysis">Power BI</a>
+      <a href="../../index.html#about">About</a>
+      <a class="nav-li" aria-label="LinkedIn" href="https://www.linkedin.com/in/c-john-smith/" target="_blank" rel="noopener"><svg class="li-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span class="li-text">LinkedIn</span></a>
+      <a class="btn" href="../../index.html#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="analysis">
+  <a class="crumb" href="../../index.html#analysis">← All Power BI projects</a>
+
+  <div class="project">
+    <!-- ===== 1. TITLE, THREE-POINT SUMMARY, DASHBOARD ===== -->
+    <section class="project-top" aria-labelledby="title">
+      <span class="label data">Public data · CFPB</span>
+      <h1 id="title">Consumer Complaints &amp; Response SLA<br>A Business Analysis</h1>
+      <p class="lede deliverable">Analysis of consumer complaint trends, response times and SLA performance, highlighting key drivers of delays and potential areas for operational improvement.</p>
+      <p class="meta-line scope"><span>CFPB Consumer Complaint Database</span><span>4,991 complaints</span><span>August 2026 extract</span></p>
+      <ul class="glance" aria-label="Project summary">
+        <li><span class="glance-key">Problem</span><span>Every complaint sent by the regulator starts a 15-day response clock. Operations needed to know what drives complaints and late responses.</span></li>
+        <li><span class="glance-key">Finding</span><span>98.6% were answered on time, but smaller companies caused 67 of the 68 late responses, and 36% of complaints trace to credit data that belongs to someone else.</span></li>
+        <li><span class="glance-key">Recommendation</span><span>Fix identity matching at the source, track debt-collection and student-loan complaints daily, and route legal-threat complaints to a specialist team.</span></li>
+      </ul>
+      <figure class="dashboard">
+        <img src="dashboard.png" alt="Power BI executive summary showing 4,991 complaints, 98.6% timely response rate, 68 late responses, 42.6% relief rate, top issues and company groups">
+        <figcaption>The Power BI executive summary page</figcaption>
+      </figure>
+      <div class="buttons">
+        <a class="btn" href="https://github.com/CJsmith-page/powerbi-consumer-complaints" target="_blank" rel="noopener">View repository</a>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-consumer-complaints/blob/main/dashboard/Consumer_Complaints_Dashboard.pdf" target="_blank" rel="noopener">Dashboard PDF</a>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-consumer-complaints/blob/main/docs/Project_Brief.md" target="_blank" rel="noopener">Project Brief</a>
+      </div>
+    </section>
+
+    <!-- ===== 2. SECTIONS (two columns) =====
+         Each article block is one panel. Add or remove panels in pairs to keep the grid even. -->
+    <section class="posts">
+      <article>
+        <h2>The Business Problem</h2>
+        <p>When the CFPB forwards a complaint, the company is expected to respond within 15 days. That deadline works like a service level agreement (SLA): a late response is a regulatory risk, and a complaint that ends in relief, where the company fixes something or pays money back, points to a process error.</p>
+        <p>The project brief defined four stakeholders and what each needs: the Head of Operations (what to fix first), complaints team leads (where the SLA is missed), Compliance (performance against peers) and product owners (the root causes behind their products’ complaints).</p>
+        <p>These needs became nine business questions and four KPIs: complaints, timely response rate, late responses and relief rate.</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-consumer-complaints/blob/main/docs/Project_Brief.md" target="_blank" rel="noopener">View Brief</a>
+      </article>
+
+      <article>
+        <h2>The Dashboard for Stakeholders</h2>
+        <a href="https://github.com/CJsmith-page/powerbi-consumer-complaints/blob/main/dashboard/Consumer_Complaints_Dashboard.pdf" target="_blank" rel="noopener"><img src="powerbi_preview.png" alt="Bar chart comparing timely response rates of credit bureaus, large banks and other companies with the peer average"></a>
+        <p>Four pages, each answering one question: the executive summary (how are we performing?), root cause (what drives complaints?), peer comparison (how do company groups compare?) and recommendations with caveats (what should we do?).</p>
+        <p>Every chart title states its finding rather than describing the chart, and filters let a manager focus on one company group or product.</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-consumer-complaints/blob/main/dashboard/Consumer_Complaints_Dashboard.pdf" target="_blank" rel="noopener">View Dashboard</a>
+      </article>
+
+      <article>
+        <h2>Key Findings</h2>
+        <ol>
+          <li><strong>Credit reporting drives the volume.</strong> 92.5% of the 4,991 complaints concern credit reporting, and “incorrect information on your report” alone accounts for 58%.<span class="implication"><b>Implication:</b> improving one product would address most of the complaint volume.</span></li>
+          <li><strong>The main root cause is data matching, not service.</strong> In 36% of all complaints, the consumer says the information on their report belongs to someone else.<span class="implication"><b>Implication:</b> the fix sits upstream, in how lenders and bureaus match identities, not in faster complaint handling.</span></li>
+          <li><strong>The SLA is largely met.</strong> 98.6% of complaints were answered within 15 days. The credit bureaus achieved 100%, and the large banks matched the 98.6% average.<span class="implication"><b>Implication:</b> there is no case for a broad SLA intervention.</span></li>
+          <li><strong>Late responses are concentrated in smaller companies.</strong> With 7.7% of complaints, they caused 67 of the 68 late responses, mostly in debt collection and student loans.<span class="implication"><b>Implication:</b> SLA monitoring should target these products rather than every product.</span></li>
+          <li><strong>Legal threats are an SLA hot spot.</strong> Complaints about threatened legal action were answered late in 14 of 26 cases (54%), against 1.4% overall.<span class="implication"><b>Implication:</b> these high-risk complaints need a dedicated route.</span></li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>Recommendations</h2>
+        <ol>
+          <li><strong>Fix identity matching at the source.</strong> Work with lenders and credit bureaus to stop information being reported on the wrong person.<span class="rec-meta">Addresses finding 2 · <b>Measure:</b> share of complaints citing information that belongs to someone else.</span></li>
+          <li><strong>Monitor the SLA where it fails.</strong> Track debt collection and student loan complaints daily.<span class="rec-meta">Addresses finding 4 · <b>Measure:</b> timely response rate for these two products.</span></li>
+          <li><strong>Create a specialist route for legal threats.</strong> Send these complaints to a specialist team with a 10-day internal target.<span class="rec-meta">Addresses finding 5 · <b>Measure:</b> late responses in this category.</span></li>
+          <li><strong>Use relief as an early warning.</strong> Review monthly the issues where companies most often had to provide relief (42.6% of closed complaints).<span class="rec-meta">Surfaces process errors · <b>Measure:</b> relief rate by issue.</span></li>
+          <li><strong>Confirm with more data before setting targets.</strong> Re-run the analysis on two to three years of data for a bank peer group.<span class="rec-meta">Addresses the snapshot limitation · <b>Measure:</b> consistency of findings across periods.</span></li>
+        </ol>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-consumer-complaints" target="_blank" rel="noopener">View repository</a>
+      </article>
+
+      <article>
+        <h2>How the Analysis Was Done</h2>
+        <a href="https://github.com/CJsmith-page/powerbi-consumer-complaints/blob/main/sql/Bankcomplaintsanalysis.sql" target="_blank" rel="noopener"><img src="sql_preview.png" alt="SQL query comparing timely response rates by peer group"></a>
+        <p>The analysis was built in SQLite using DBeaver. The first step creates one clean table: it converts the CFPB dates, assigns each company to a peer group (credit bureaus, large banks and all other companies) and adds 1/0 flags for timely response, late response and relief. Every KPI is then a simple SUM or COUNT, which keeps the numbers easy to check.</p>
+        <p>Nine business questions follow, from a data check and baseline KPIs to root cause, peer comparison and the companies missing the SLA. Each query carries a comment stating the business question and the result.</p>
+        <a class="btn btn-secondary" href="https://github.com/CJsmith-page/powerbi-consumer-complaints/blob/main/sql/Bankcomplaintsanalysis.sql" target="_blank" rel="noopener">View SQL</a>
+      </article>
+
+      <article>
+        <h2>Comparing Fairly</h2>
+        <p>The CFPB states that its complaint data is not a statistical sample, and that volume should be read in the context of company size: a large company will always receive more complaints than a small one.</p>
+        <p>I therefore grouped companies into peers and compared rates, not counts. This changed the conclusion. By count, the credit bureaus dominate; by rate, the smallest group, with 7.7% of complaints, caused 67 of the 68 late responses.</p>
+        <p>Limitation: the extract is a snapshot, with 95% of complaints received between 24 and 29 August 2026. It shows where problems sit today, not how they trend.</p>
+      </article>
+    </section>
+  </div>
+
+  <p class="project-source">Data: <a href="https://www.consumerfinance.gov/data-research/consumer-complaints/">CFPB Consumer Complaint Database</a><br>
+  Tools: SQLite (DBeaver) &middot; Power BI</p>
+
+  <!-- ===== 3. PREVIOUS / NEXT ===== -->
+  <nav class="pager" aria-label="More Power BI projects">
+    <a href="../../index.html#analysis"><small>← Back</small>All Power BI projects</a>
+    <a class="next" href="../02-bank-consolidation/index.html"><small>Next →</small>US Bank Consolidation &amp; Branch Impact</a>
+  </nav>
+</main>
+
+<!-- ===== FOOTER (same on every page) ===== -->
+<footer class="site-footer">
+  © 2026 Cudjoe John Smith · <a href="mailto:cjohnsmith8@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/c-john-smith/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/CJsmith-page" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+</body>
+</html>
